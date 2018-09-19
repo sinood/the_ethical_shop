@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <head>
+        <link rel="stylesheet" type="text/css" href="front.css">
+    </head>
+    
+    <body>
+        
+        <script src="back.js"></script>
+        
+        <div class="container">
+            <!--App title-->
+            <div class="item item-1">
+                <div class="section-title">
+                    <h1>The Ethical Shop</h1>
+                </div>
+                <div class="section-subtitle">
+                    <h2>Piratical Liz's Honest Video Store</h2>
+                </div>
+            </div>
+
+            <!--Store-->
+            <div class="item item-2">
+                <div class="section-title">
+                    <h2>In Stock</h2>
+                </div>
+                <div class="table">
+                    <table class="table-1", style="width:100%", id="tbl1">
+                        <tr class="row">
+                            <th class="store-col-0">Item</th>
+                            <th class="store-col-1">Format</th>
+                            <th class="store-col-2">Price</th>
+                            <th class="store-col-3">Qty</th>
+                            <th class="store-col-4"></th>
+                        </tr>
+                        <!--
+                            Star Wars Episode IV DVD ($20)
+                            Star Wars Episode V DVD ($20)
+                            Star Wars Episode VI DVD ($20)
+                            Star Wars Episode IV Blu-Ray ($25)
+                            Star Wars Episode V Blu-Ray ($25)
+                            Star Wars Episode VI Blu-Ray ($25)
+                        -->
+                        
+                        <tr>
+                            <td>Star Wars Episode IV</td><td>DVD</td><td>$20.00</td><td>50</td>
+                            <td>
+                                <button id="btn-1", onclick="addToCart(1,this.parentElement.parentElement.cells[0].innerHTML,this.parentElement.parentElement.cells[1].innerHTML,this.parentElement.parentElement.cells[2].innerHTML,this.parentElement.parentElement.cells[3].innerHTML,0);this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);updateTotal();">Add to cart</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Star Wars Episode V</td><td>DVD</td><td>$20.00</td><td>50</td>
+                            <td>
+                                <button id="btn-1", onclick="addToCart(1,this.parentElement.parentElement.cells[0].innerHTML,this.parentElement.parentElement.cells[1].innerHTML,this.parentElement.parentElement.cells[2].innerHTML,this.parentElement.parentElement.cells[3].innerHTML,0);this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);updateTotal();">Add to cart</button>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td>Star Wars Episode VI</td><td>DVD</td><td>$20.00</td><td>50</td>
+                            <td>
+                                <button id="btn-1", onclick="addToCart(1,this.parentElement.parentElement.cells[0].innerHTML,this.parentElement.parentElement.cells[1].innerHTML,this.parentElement.parentElement.cells[2].innerHTML,this.parentElement.parentElement.cells[3].innerHTML,0);this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);updateTotal();">Add to cart</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Star Wars Episode IV</td><td>Blu-Ray</td><td>$25.00</td><td>50</td>
+                            <td>
+                                <button id="btn-1", onclick="addToCart(1,this.parentElement.parentElement.cells[0].innerHTML,this.parentElement.parentElement.cells[1].innerHTML,this.parentElement.parentElement.cells[2].innerHTML,this.parentElement.parentElement.cells[3].innerHTML,0);this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);updateTotal();">Add to cart</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Star Wars Episode V</td><td>Blu-Ray</td><td>$25.00</td><td>50</td>
+                            <td>
+                                <button id="btn-1", onclick="addToCart(1,this.parentElement.parentElement.cells[0].innerHTML,this.parentElement.parentElement.cells[1].innerHTML,this.parentElement.parentElement.cells[2].innerHTML,this.parentElement.parentElement.cells[3].innerHTML,0);this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);updateTotal();">Add to cart</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Star Wars Episode VI</td><td>Blu-Ray</td><td>$25.00</td><td>50</td>
+                            <td>
+                                <button id="btn-1", onclick="addToCart(1,this.parentElement.parentElement.cells[0].innerHTML,this.parentElement.parentElement.cells[1].innerHTML,this.parentElement.parentElement.cells[2].innerHTML,this.parentElement.parentElement.cells[3].innerHTML,0);this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);updateTotal();">Add to cart</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!--Shopping-->
+
+            <!--Shopping cart-->
+            <div class="item item-3">
+                <div class="section-title">
+                    <h2>Shopping Cart</h2>
+                </div>
+                <div class="table">
+                    <table style="width:100%", id="tbl2">
+                        <tr>
+                            <th class="item-desc-cell">Item</th>
+                            <th class="item-format-cell">Format</th>
+                            <th class="item-price-cell">Price</th>
+                            <th class="item-qty-cell">Qty</th>
+                            <th class="qty-plus-minus-cell"></th>
+                            <th class="item-rm-cell"></th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            
+
+            <!--Discounts-->
+            <div class="item item-4">
+
+                <div class="section-title">
+                    <h2>Discounts</h2>
+                </div>
+                <div class="table disc", id="tbl3">
+                    <table style="width:100%">
+                            <tr>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr class="disc-name0", id="disc-name0">
+                                <td>DVD Discount</td>
+                                <td>10% off all DVDs</td>
+                            </tr>
+                            <tr class="disc-name1", id="disc-name1">
+                                <td>Blu-Ray Discount</td>
+                                <td>15% off all Blu-Rays</td>
+                            </tr>
+                            <tr class="disc-name2", id="disc-name2">
+                                <td>Bulk Discount</td>
+                                <td>5% off total purchase</td>
+                            </tr>
+                        </table>
+                </div>
+                <div class="">
+                </div>
+            </div>
+            
+            <!--Total-->
+            <div class="total-item">
+                <div class="total-section", id="tbl3">
+                    <div class="total-title">
+                        <div class="total-text">
+                            <h2>Total:</h2>
+                        </div>
+                        <div class="amount">
+                            <h2 id="amt">0</h2>
+                        </div>
+                        <div class="amount-items">
+                            <h2 id="itms">item(s)</h2>
+                        </div>
+                    </div>
+                    
+                    <div class="total">
+                        <h2 id="tot">$0.00</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    
+</html>
