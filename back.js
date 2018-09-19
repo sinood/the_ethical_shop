@@ -86,7 +86,8 @@ function checkForDiscount() {
     var table = document.getElementById("tbl1");
     var len = document.getElementById("tbl1").rows.length;
     var sameCount = 0;
-    var otherFormat = "DVD";
+    var bool1 = true;
+    var bool2 = true;
     if (len <= 1) {
         applyDiscount('DVD');
         applyDiscount('Blu-Ray');
@@ -98,24 +99,20 @@ function checkForDiscount() {
     }
     for (i = 1; i < len;i++){
         row = table.rows[i];
-        media_format = row.cells[1].innerHTML;
-        if (media_format ==='DVD'){
-            otherFormat = "Blu-Ray";
+        mediaFormat = row.cells[1].innerHTML;
+        if (mediaFormat ==='DVD'){
+            bool1 = false;
             revokeDiscount('DVD');
-        }
-    }
-    for (i = 1; i < len;i++){
-        row = table.rows[i];
-        media_format = row.cells[1].innerHTML;
-        if (media_format ==='Blu-Ray'){
-            otherFormat = "";
+        } else if (mediaFormat ==='Blu-Ray') {
+            bool2 = false;
             revokeDiscount('Blu-Ray');
         }
     }
-    if (document.getElementById("tbl1").rows.length-1 > 1) {
-        if (otherFormat === 'Blu-Ray') {
+    if (document.getElementById("tbl1").rows.length-1 > 0) {
+        if (bool1) {
             applyDiscount('DVD');
-        } else if (otherFormat === 'DVD'){
+        }
+        if (bool2){
             applyDiscount('Blu-Ray');
         }
     }
